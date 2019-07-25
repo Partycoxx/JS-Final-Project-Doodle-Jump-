@@ -994,7 +994,7 @@ class GAME
         this.tapElapsedTimer=new Date();
         if(this.tapTimer!=undefined)
         {
-            if(this.tapElapsedTimer-this.tapTimer<=450)
+            if(this.tapElapsedTimer-this.tapTimer<=250)
             {
                 this.leftRight=2;
             }
