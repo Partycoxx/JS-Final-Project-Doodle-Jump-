@@ -77,6 +77,8 @@ class GAME
         this.chance=3;                //chance to be hit by enemy's bullet for the doodle before dying.
         this.drunkenMode=0;          //flag for checking drunken mode
         this.doodleClicked=0;       //flag for checkin screen tapped or not in mobile game play.
+        this.tapTimer;             //variable to store time when the screen is tapped.
+        this.tapElapsedTimer;     //variable to store elapsed timer after screen is tapped.
         this.aX;
         this.aY;
         this.theta=[]; //angle between enemy and doodle;
@@ -477,6 +479,7 @@ class GAME
             this.doodleClicked=1;  
             this.bullet=new Bullet(this.doodle.x+this.doodle.width/2,this.doodle.y,this.context);
             this.bulletArray.push(this.bullet);
+            this.tapTimer=new Date();
             
         }
 
@@ -489,7 +492,7 @@ class GAME
                
             if(event.code=='KeyA' || event.code=='Space')
             {
-                this.accelerometerFlag=true;
+                //this.accelerometerFlag=true;
                 this.leftRight=0;
             }
 
@@ -498,7 +501,7 @@ class GAME
             }
             
             if(event.code=='KeyA' || event.code=='KeyD')
-            {   this.accelerometerFlag=true;
+            {   //this.accelerometerFlag=true;
                 if(this.drunkenMode==0)
                 {
                     this.doodleXchange=0;
@@ -521,7 +524,7 @@ class GAME
                     
                 }
             
-                if(this.aX>23 && this.aX<97)
+                if(this.aX>15 && this.aX<97)
                 {
                     if(this.drunkenMode==0)
                         {
@@ -532,11 +535,11 @@ class GAME
                         {
                             if(this.score<200)
                             {
-                                this.doodleXchange=-4.5;
+                                this.doodleXchange=-3.5;
                             }
                             if(this.score>=200)
                             {
-                                this.doodleXchange=-4;
+                                this.doodleXchange=-3.2;
                             }
                         }
                         if(this.doodleClicked==0)
@@ -544,7 +547,7 @@ class GAME
                         this.leftRight=1;
                         }
                 }
-                if(this.aX>-18 && this.aX<-5)
+                if(this.aX>-12 && this.aX<-5)
                 {
                     
                     if(this.drunkenMode==0)
@@ -559,7 +562,7 @@ class GAME
                     }
                     
                 }
-                if(this.aX>5 && this.aX<18)
+                if(this.aX>5 && this.aX<12)
                 {
                     
                     if(this.drunkenMode==0)
@@ -573,7 +576,7 @@ class GAME
                         this.leftRight=1;
                     }
                 }
-                if(this.aX<-23 && this.aX>-97 )
+                if(this.aX<-15 && this.aX>-97 )
                 {
                     if(this.drunkenMode==0)
                         {
@@ -584,11 +587,11 @@ class GAME
                         {
                             if(this.score<200)
                             {
-                                this.doodleXchange=4.5;
+                                this.doodleXchange=3.5;
                             }
                             if(this.score>=200)
                             {
-                                this.doodleXchange=4;
+                                this.doodleXchange=3.2;
                             }
                         }
                         if(this.doodleClicked==0)
@@ -596,7 +599,7 @@ class GAME
                         this.leftRight=0;
                         }
                 }
-                if(this.aX-25 || this.aX>25)
+                if(this.aX<-25 || this.aX>25)
                 {
                     this.doodleClicked=0;
                 }
@@ -912,7 +915,7 @@ class GAME
         pausePlay.style.display='none';
         //this.clearRect()
         cancelAnimationFrame(this.animator);
-        this.enemySiren.pause();
+        
         if(this.score>localStorage.getItem('Doodle')){
             
             
@@ -948,6 +951,7 @@ class GAME
             this.restartGame();
            
         }
+        
     }
 
     restartGame()
@@ -987,6 +991,14 @@ class GAME
         this.newCanvas();
         
         this.eventHandler();
+        this.tapElapsedTimer=new Date();
+        if(this.tapTimer!=undefined)
+        {
+            if(this.tapElapsedTimer-this.tapTimer<=1000)
+            {
+                this.leftRight=2;
+            }
+        }
         this.animator=window.requestAnimationFrame(()=>this.gameLoop());
         
       
@@ -1358,6 +1370,7 @@ class GAME
 
         
     }
+    
 }
 
 }
