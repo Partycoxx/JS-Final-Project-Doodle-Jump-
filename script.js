@@ -825,9 +825,10 @@ class GAME
     enemyShotDoodle() //doodle hit by the enemy's bullet
     {
         let doodleYoffset=20;
+        let doodleXoffset=10;
         for(let h=0;h<this.enemyBulletArray.length;h++)
         {
-            if(this.enemyBulletArray[h].xCentre+this.enemyBulletArray[h].radius>=this.doodle.x && this.enemyBulletArray[h].xCentre-this.enemyBulletArray[h].radius<=this.doodle.x+this.doodle.width && this.enemyBulletArray[h].yCentre+this.enemyBulletArray[h].radius>this.doodle.y+doodleYoffset && this.enemyBulletArray[h].yCentre+this.enemyBulletArray[h].radius<=this.doodle.y+this.doodle.height ){
+            if(this.enemyBulletArray[h].xCentre+this.enemyBulletArray[h].radius>=this.doodle.x+doodleXoffset && this.enemyBulletArray[h].xCentre-this.enemyBulletArray[h].radius<=this.doodle.x+this.doodle.width-doodleXoffset && this.enemyBulletArray[h].yCentre+this.enemyBulletArray[h].radius>this.doodle.y+doodleYoffset && this.enemyBulletArray[h].yCentre+this.enemyBulletArray[h].radius<=this.doodle.y+this.doodle.height ){
                
                 if(this.chance!=0)
                 {
