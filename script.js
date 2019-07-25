@@ -1411,7 +1411,7 @@ function assetsLoadingLoop(callback) {
         callback();
         window.cancelAnimationFrame(assetsLoader);
     }else{
-        assetsLoader = window.requestAnimationFrame(assetsLoadingLoop.bind(this, callback));
+        assetsLoader = window.requestAnimationFrame(()=>assetsLoadingLoop(callback));
     }
 }
 
