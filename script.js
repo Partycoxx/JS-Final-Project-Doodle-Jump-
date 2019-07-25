@@ -596,7 +596,7 @@ class GAME
                         this.leftRight=0;
                         }
                 }
-                if(this.ax<-15 || this.ax>15)
+                if(this.ax<-25 || this.ax>25)
                 {
                     this.doodleClicked=0;
                 }
