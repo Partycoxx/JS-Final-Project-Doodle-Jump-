@@ -213,7 +213,8 @@ class Doodle
             if(boosterArray[i].type==3 && (this.direction='isFalling' || this.direction=='isFlying'))
             
             {
-                if((this.y+this.height>=boosterArray[i].y && (this.y+this.height<=boosterArray[i].y+boosterArray[i].height/2))  &&  (this.x+this.width>=boosterArray[i].x && this.x<=(boosterArray[i].x+boosterArray[i].width) ) && this.direction=='isFalling')
+                let doodleOffset=7;
+                if(((this.y+this.height>=boosterArray[i].y && (this.y+this.height<=boosterArray[i].y+boosterArray[i].height)) || (this.y-doodleOffset<=boosterArray[i].y+boosterArray[i].height && (this.y+doodleOffset>=boosterArray[i].y)))  &&  (this.x+this.width>=boosterArray[i].x && this.x<=(boosterArray[i].x+boosterArray[i].width) ) && this.direction=='isFalling')
                 {
                     this.jetPack.currentTime=0;
                     this.jetPack.play();
