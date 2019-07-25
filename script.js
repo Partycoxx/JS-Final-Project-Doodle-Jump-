@@ -532,11 +532,11 @@ class GAME
                         {
                             if(this.score<200)
                             {
-                                this.doodleXchange=-4;
+                                this.doodleXchange=-4.5;
                             }
                             if(this.score>=200)
                             {
-                                this.doodleXchange=-3.55;
+                                this.doodleXchange=-4;
                             }
                         }
                         if(this.doodleClicked==0)
@@ -584,11 +584,11 @@ class GAME
                         {
                             if(this.score<200)
                             {
-                                this.doodleXchange=4;
+                                this.doodleXchange=4.5;
                             }
                             if(this.score>=200)
                             {
-                                this.doodleXchange=3.75;
+                                this.doodleXchange=4;
                             }
                         }
                         if(this.doodleClicked==0)
