@@ -535,11 +535,11 @@ class GAME
                         {
                             if(this.score<200)
                             {
-                                this.doodleXchange=-3.5;
+                                this.doodleXchange=-4.2;
                             }
                             if(this.score>=200)
                             {
-                                this.doodleXchange=-3.2;
+                                this.doodleXchange=-4;
                             }
                         }
                         if(this.doodleClicked==0)
@@ -587,11 +587,11 @@ class GAME
                         {
                             if(this.score<200)
                             {
-                                this.doodleXchange=3.5;
+                                this.doodleXchange=4.2;
                             }
                             if(this.score>=200)
                             {
-                                this.doodleXchange=3.2;
+                                this.doodleXchange=4;
                             }
                         }
                         if(this.doodleClicked==0)
@@ -891,6 +891,7 @@ class GAME
                     
                     this.enemySiren.play();
                 }
+                
             }
         }
     }
@@ -915,7 +916,8 @@ class GAME
         pausePlay.style.display='none';
         //this.clearRect()
         cancelAnimationFrame(this.animator);
-        
+        this.enemySiren.pause();
+        this.enemySiren.currentTime=0;
         if(this.score>localStorage.getItem('Doodle')){
             
             
@@ -925,7 +927,7 @@ class GAME
         }
         this.playAgain=document.getElementById('playagain');
         
-       
+        
         this.playAgain.style.display='block';
         this.context.save();
         this.context.font="30px Doodle";
@@ -994,7 +996,7 @@ class GAME
         this.tapElapsedTimer=new Date();
         if(this.tapTimer!=undefined)
         {
-            if(this.tapElapsedTimer-this.tapTimer<=250)
+            if(this.tapElapsedTimer-this.tapTimer<=650)
             {
                 this.leftRight=2;
             }
@@ -1289,10 +1291,12 @@ class GAME
 
         }
 
-        
+        this.enemyWarning(); 
         var value=this.doodle.obstacleCollision(this.obstacleArray);
+       
         if(value==0)
         {
+
             this.gameOver();
         }
         if(value==1)
@@ -1318,10 +1322,11 @@ class GAME
 
         
         this.obstaclewiseMotion();
-        this.enemyWarning();
+        
         
         if(this.doodle.y+this.doodle.height>=CANVAS_HEIGHT)
         {
+        
             this.monsterDeath.play();
             this.gameOver();
     
