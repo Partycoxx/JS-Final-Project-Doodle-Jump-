@@ -525,18 +525,18 @@ class GAME
                 {
                     if(this.drunkenMode==0)
                         {
-                            this.doodleXchange=-4.2;
+                            this.doodleXchange=-3.75;
                             
                         }
                         else
                         {
                             if(this.score<200)
                             {
-                                this.doodleXchange=-4.75;
+                                this.doodleXchange=-4;
                             }
                             if(this.score>=200)
                             {
-                                this.doodleXchange=-4.5;
+                                this.doodleXchange=-3.55;
                             }
                         }
                         if(this.doodleClicked==0)
@@ -578,17 +578,17 @@ class GAME
                     if(this.drunkenMode==0)
                         {
                             
-                            this.doodleXchange=4.2;
+                            this.doodleXchange=3.75;
                         }
                         else
                         {
                             if(this.score<200)
                             {
-                                this.doodleXchange=4.75;
+                                this.doodleXchange=4;
                             }
                             if(this.score>=200)
                             {
-                                this.doodleXchange=4.5;
+                                this.doodleXchange=3.75;
                             }
                         }
                         if(this.doodleClicked==0)
