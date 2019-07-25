@@ -521,7 +521,7 @@ class GAME
                     
                 }
             
-                if(this.aX>15 && this.aX<97)
+                if(this.aX>23 && this.aX<97)
                 {
                     if(this.drunkenMode==0)
                         {
@@ -544,7 +544,7 @@ class GAME
                         this.leftRight=1;
                         }
                 }
-                if(this.aX>-12 && this.aX<-5)
+                if(this.aX>-18 && this.aX<-5)
                 {
                     
                     if(this.drunkenMode==0)
@@ -559,7 +559,7 @@ class GAME
                     }
                     
                 }
-                if(this.aX>5 && this.aX<12)
+                if(this.aX>5 && this.aX<18)
                 {
                     
                     if(this.drunkenMode==0)
@@ -573,7 +573,7 @@ class GAME
                         this.leftRight=1;
                     }
                 }
-                if(this.aX<-15 && this.aX>-97 )
+                if(this.aX<-23 && this.aX>-97 )
                 {
                     if(this.drunkenMode==0)
                         {
