@@ -209,9 +209,9 @@ class GAME
 
         else if (this.score >= 50 && this.score < 200)
         {
-            this.boosterTypes = [1, 1, 1, 2, 2, 2,4];
+            this.boosterTypes = [1, 1, 1, 2, 2, 2];
         }
-        else this.boosterTypes = [1,3];
+        else this.boosterTypes = [3];
 
         this.boosterType = this.boosterTypes[Math.floor(Math.random()*this.boosterTypes.length)];
         
