@@ -173,7 +173,7 @@ class GAME
 
         else if (this.score >= 50 && this.score < 200)
         {
-            this.platformTypes = [1, 1, 1, 1,2, 2, 2];
+            this.platformTypes = [1, 1, 1, 1,2, 2, 2,4];
         }
         else this.platformTypes = [1];
 
