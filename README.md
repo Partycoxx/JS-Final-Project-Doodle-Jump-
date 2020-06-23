@@ -9,7 +9,7 @@ Techniques and Tools used:
 3. Accelerometer feature given by HTML5 to play the game in mobile phones.
 5. Implements the platform based gaming technique.
 6. Game loop for smooth rendering and update of the UI.
-7. Local Storage to store the higest score.
+7. Local Storage to store the highest score.
 
 Features:
 
