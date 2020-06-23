@@ -6,7 +6,7 @@ Techniques and Tools used:
 
 1. HTML5 Canvas has for the development of UI.
 2. Vanilla Javascript for the interaction with UI.
-3. Accelerometer feature given by HTML5 to play the game in the mobile phones.
+3. Accelerometer feature given by HTML5 to play the game in mobile phones.
 5. Implements the platform based gaming techniques.
 6. Game loop for smooth rendering and update of the UI.
 
