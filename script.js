@@ -7,13 +7,15 @@ var playOn=document.getElementById('startplay');
 var pausePlay=document.getElementById('pausePlay');
 var instructions=document.getElementById('pcinstruction');
 var mobileInstruction=document.getElementById('mobileinstruction');
-const CANVAS_HEIGHT=window.innerHeight;
-const CANVAS_WIDTH=window.innerWidth > 500? 500: window.innerWidth;
+const CANVAS_HEIGHT=screen.height;
+const CANVAS_WIDTH=screen.width > 500? 500: screen.width;
 startPage.querySelector('img').width=CANVAS_WIDTH;
 startPage.querySelector('img').height=CANVAS_HEIGHT;
 pauseContainer.querySelector('img').width=CANVAS_WIDTH;
 pauseContainer.querySelector('img').height=CANVAS_HEIGHT;
 startPage.style.height=CANVAS_HEIGHT;
+
+console.log({CANVAS_WIDTH, CANVAS_HEIGHT})
 
 
 function getRandom(min,max)
