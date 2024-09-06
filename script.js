@@ -15,7 +15,7 @@ pauseContainer.querySelector('img').width=CANVAS_WIDTH;
 pauseContainer.querySelector('img').height=CANVAS_HEIGHT;
 startPage.style.height=CANVAS_HEIGHT;
 
-console.log({CANVAS_WIDTH, CANVAS_HEIGHT})
+console.log("CANVAS_WIDTH", CANVAS_WIDTH, "CANVAS_HEIGHT", CANVAS_HEIGHT)
 
 
 function getRandom(min,max)
@@ -31,7 +31,7 @@ class GAME
         this.canvas=element;
         this.canvas.width=CANVAS_WIDTH;
         this.canvas.height=CANVAS_HEIGHT;
-        this.context=element.getContext('2d');
+        this.context=element.getContext('2d', { alpha: false });
         this.backgroundImage=SPRITES.background;
         this.potHole= SPRITES.potHole;
         this.player= SPRITES.player;
@@ -1450,16 +1450,16 @@ function loadAssets(callback)
         return audio;
     }
   
-  //Audio loading.  
-    AUDIOS.bullet = loadAudio('sounds/bullet.mp3');
-    AUDIOS.jump=loadAudio('sounds/jump.wav');
-    AUDIOS.monsterCrash=loadAudio('sounds/monster-crash.mp3');
-    AUDIOS.enemySiren=loadAudio('sounds/enemySound.mp3');
-    AUDIOS.trampSound=loadAudio('sounds/trampoline.mp3');
-    AUDIOS.springSound=loadAudio('sounds/spring_sound.wav');
-    AUDIOS.fakePlatform=loadAudio('sounds/lomise.mp3');
-    AUDIOS.obstacleCrash=loadAudio('sounds/obstacleCrash.mp3');
-    AUDIOS.jetPack=loadAudio('sounds/jetpack.mp3');
+  // //Audio loading.
+  //   AUDIOS.bullet = loadAudio('sounds/bullet.mp3');
+  //   AUDIOS.jump=loadAudio('sounds/jump.wav');
+  //   AUDIOS.monsterCrash=loadAudio('sounds/monster-crash.mp3');
+  //   AUDIOS.enemySiren=loadAudio('sounds/enemySound.mp3');
+  //   AUDIOS.trampSound=loadAudio('sounds/trampoline.mp3');
+  //   AUDIOS.springSound=loadAudio('sounds/spring_sound.wav');
+  //   AUDIOS.fakePlatform=loadAudio('sounds/lomise.mp3');
+  //   AUDIOS.obstacleCrash=loadAudio('sounds/obstacleCrash.mp3');
+  //   AUDIOS.jetPack=loadAudio('sounds/jetpack.mp3');
 
 
   //Sprite loading.
@@ -1482,8 +1482,8 @@ function loadAssets(callback)
   SPRITES.breakingPlatform=loadSprite('images/breakanimate.png');
   SPRITES.yellowPlatform=loadSprite('images/yellow_platform.png');
   numAssets = assetsStillLoading;
-  //console.log(numAssets);
-  //console.log(assetsStillLoading);
+  console.log(numAssets);
+  console.log(assetsStillLoading);
     assetsLoadingLoop(callback); 
 }  
 
